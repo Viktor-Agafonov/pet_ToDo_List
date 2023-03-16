@@ -1,13 +1,25 @@
 .task {
     width: 80%;
-    height: 5%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.dataBlock {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    margin: 0% 2% 0% auto;
+}
+
+.taskData {
+    width: 70%;
 }
 
 #deleteTask {
-    width: 10%;
-    height: 50%;
+    width: 30%;
     border: 1px solid black;
+
 }
 
 .completed {

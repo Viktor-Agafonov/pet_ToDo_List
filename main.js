@@ -1,4 +1,11 @@
+let Data = new Date(),
+Year = Data.getFullYear(),
+Month = Data.getMonth(),
+Day = Data.getDate();
+let currentDate = Year + "." + Month + "." + Day;
+
 let taskInput = document.querySelector("#taskInput");
+let dateInput = document.querySelector("#dateInput")
 let startMessage = document.querySelector("#startMessage");
 let template = document.querySelector("#template").innerHTML;
 let taskList = document.querySelector(".taskList");
@@ -9,8 +16,9 @@ taskInput.addEventListener("keydown", function (e) {
 })
 
 class Task {
-    constructor(text) {
+    constructor(text, data) {
         this.text = text;
+        this.data = data;
         this.isDone = false;
     }
 }
@@ -56,7 +64,7 @@ let taskDatabaseManagement = {
 function addNewTask() {
     if (taskInput.value) {
         if (!startMessage.hidden) startMessage.hidden = true;
-        let newTask = new Task(taskInput.value);
+        let newTask = new Task(taskInput.value, dateInput.value);
         taskDatabaseManagement.addTask(newTask);
         taskInput.value = "";
         createEndShowTasks(newTask);
@@ -75,8 +83,8 @@ function createEndShowTasks(obj) {
         });       
     }
     document.querySelectorAll("#deleteTask").forEach(task => task.addEventListener("click", function (e) {
-        if (e.target.previousElementSibling.innerHTML != obj.text) return;
-        e.target.parentElement.remove();
+        if (e.target.parentElement.previousElementSibling.innerHTML != obj.text) return;
+        e.target.parentElement.parentElement.remove();
         taskDatabaseManagement.deleteTask(obj);
     }));
     document.querySelectorAll("#checkbox").forEach(task => task.addEventListener("click", function (e) {
@@ -104,7 +112,8 @@ document.querySelector("#showAllButtton").addEventListener("click", function (e)
     taskDatabaseManagement.arrayTasks.forEach(task => createEndShowTasks(task));
 });
 document.querySelector("#showNotCompletedButtton").addEventListener("click", function (e) {
-    let notCompletedTasks = taskDatabaseManagement.arrayTasks.notCompletedTasks;
+    let notCompletedTasks = taskDatabaseManagement.notCompletedTasks;
+    taskList.innerHTML = "";
     notCompletedTasks.forEach(task => createEndShowTasks(task));
 });
 

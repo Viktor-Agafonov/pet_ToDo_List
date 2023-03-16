@@ -13,6 +13,8 @@
 
     <div class="inputBlock">
         <input type="text" id="taskInput">
+        <label for="dateInput">Сроки выполнения задачи</label>
+        <input type="date" id="dateInput">
         <button id="addTaskButtton">Добавить задачу</button>
     </div>
     <div class="inputBlock">
@@ -27,7 +29,11 @@
         <div class="task">
             <input id="checkbox" type="checkbox">
             <p class="taskText">{{text}}</p>
-            <div id="deleteTask">Delete</div>
+            <div class="dataBlock">
+                <p class="taskData">{{data}}</p>
+                <div id="deleteTask">Delete</div>
+            </div>
+
         </div>
     </template>
 
