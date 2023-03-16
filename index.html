@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo_List</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div class="inputBlock">
+        <input type="text" id="taskInput">
+        <button id="addTaskButtton">Добавить задачу</button>
+    </div>
+    <div class="inputBlock">
+        <button id="showAllButtton">Все</button>
+        <button id="showNotCompletedButtton">Не завершенные</button>
+    </div>
+    <div class="taskList">
+        <p id="startMessage">Список задач пуст</p>
+    </div>
+
+    <template id="template">
+        <div class="task">
+            <input id="checkbox" type="checkbox">
+            <p class="taskText">{{text}}</p>
+            <div id="deleteTask">Delete</div>
+        </div>
+    </template>
+
+    <script src="mustache.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
