@@ -1,9 +1,5 @@
-let Data = new Date(),
-Year = Data.getFullYear(),
-Month = Data.getMonth(),
-Day = Data.getDate();
-let currentDate = Year + "." + Month + "." + Day;
-
+let data = new Date().toLocaleDateString().split(".");
+let currentDate = data[2] + "." + data[1] + "." + data[0];
 let taskInput = document.querySelector("#taskInput");
 let dateInput = document.querySelector("#dateInput")
 let startMessage = document.querySelector("#startMessage");
