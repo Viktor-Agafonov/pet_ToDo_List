@@ -186,46 +186,96 @@ body {
     align-items: center;
 }
 
-
-
-
-
 #checkbox {
-	position: relative;
-	margin: 0 1rem 0 0;
-	cursor: pointer;
+    position: relative;
+    margin: 0 1rem 0 0;
+    cursor: pointer;
     margin: 0 3% 0.5% 4%;
 }
+
 #checkbox:before {
-	content: "";
-	position: absolute;
-	top: -0.125rem;
-	left: 0;
-	z-index: 1;
-	width: 1rem;
-	height: 1rem;
-	border: 3px solid #00d1bd;;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+    content: "";
+    position: absolute;
+    top: -0.125rem;
+    left: 0;
+    z-index: 1;
+    width: 1rem;
+    height: 1rem;
+    border: 3px solid #00d1bd;
+    ;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
+
 #checkbox:checked:before {
-	height: .5rem;
-	border-color: #339933;
-	border-top-style: none;
-	border-right-style: none;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+    height: .5rem;
+    border-color: #339933;
+    border-top-style: none;
+    border-right-style: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
+
 #checkbox:after {
-	content: "";
-	position: absolute;
-	top: -0.125rem;
-	left: 0;
-	width: 1.1rem;
-	height: 1.1rem;
-	background: #fff;
+    content: "";
+    position: absolute;
+    top: -0.125rem;
+    left: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    background: #fff;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 96%;
+    }
+
+    .wrapper .panel {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .wrapper .panel .inputBlock {
+        width: 90%;
+    }
+
+    .wrapper .panel .inputBlock #dateInput {
+        width: 11%;
+        height: 42px;
+        font-size: 24px;
+    }
+
+    .wrapper .panel .inputButton {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        height: 100%;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        top: -12px;
+    }
+    .wrapper .panel .inputButton #showNotCompletedButtton {
+        margin: 0;
+    }
+    .wrapper .taskList .task {
+        overflow: overlay;
+    }
+    #checkbox  {
+        margin: 0 5% 0.5% 2%;
+    }
+    .dataBlock{
+        width: 35%;
+    }
+    .edit, #deleteTask, .alert {
+        width: 90px;
+    }
 }
