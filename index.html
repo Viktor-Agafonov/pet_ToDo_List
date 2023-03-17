@@ -10,13 +10,13 @@
 </head>
 
 <body>
-
-    <div class="inputBlock">
+    <div class="wrapper">
+    <form class="inputBlock">
         <input type="text" id="taskInput">
         <label for="dateInput">Сроки выполнения задачи</label>
-        <input type="date" id="dateInput">
+        <input type="date" id="dateInput" required>
         <button id="addTaskButtton">Добавить задачу</button>
-    </div>
+    </form>
     <div class="inputBlock">
         <button id="showAllButtton">Все</button>
         <button id="showNotCompletedButtton">Не завершенные</button>
@@ -31,12 +31,12 @@
             <p class="taskText">{{text}}</p>
             <div class="dataBlock">
                 <p class="taskData">{{data}}</p>
-                <div id="deleteTask">Delete</div>
+                <div id="deleteTask"></div>
             </div>
 
         </div>
     </template>
-
+</div>
     <script src="mustache.min.js"></script>
     <script src="main.js"></script>
 </body>

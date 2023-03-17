@@ -1,28 +1,73 @@
+body {
+    height: 96vh;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2D85DB;
+}
+
+.wrapper {
+    width: 80%;
+}
 .task {
     width: 80%;
+    /* height: 46px; */
     border: 1px solid black;
     display: flex;
     align-items: center;
 }
 
-.dataBlock {
-    width: 20%;
-    display: flex;
-    align-items: center;
-    margin: 0% 2% 0% auto;
-}
-
-.taskData {
+.taskText {
     width: 70%;
 }
 
-#deleteTask {
-    width: 30%;
-    border: 1px solid black;
+.dataBlock {
+    width: 22%;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
 
+.taskData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#deleteTask {
+    height: 35px;
+    width: 35px;
+    background: url(free-animated-icon-trash-8121324.gif) center center/100% 100% repeat-x;
+}
+
+.alert {
+    height: 35px;
+    width: 35px;
+    background: url(free-animated-icon-alert-6569138.gif) center center/100% 100% repeat-x;
+}
+
+.edit {
+    height: 35px;
+    width: 35px;
+    background: url(free-animated-icon-edit-8121326.gif) center center/100% 100% repeat-x;
 }
 
 .completed {
     background-color: green;
     color: white;
+}
+
+#checkbox {
+    margin-left: 4%;
+}
+
+.buttun {
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    background: url(free-animated-icon-approve-sign-8819015.gif) center center/100% 100% repeat-x;
+    margin-bottom: 4%;
+}
+
+.divCorrectTask {
+    display: flex;
+    align-items: center;
 }
