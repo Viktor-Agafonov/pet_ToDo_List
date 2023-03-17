@@ -11,32 +11,35 @@
 
 <body>
     <div class="wrapper">
-    <form class="inputBlock">
-        <input type="text" id="taskInput">
-        <label for="dateInput">Сроки выполнения задачи</label>
-        <input type="date" id="dateInput" required>
-        <button id="addTaskButtton">Добавить задачу</button>
-    </form>
-    <div class="inputBlock">
-        <button id="showAllButtton">Все</button>
-        <button id="showNotCompletedButtton">Не завершенные</button>
-    </div>
-    <div class="taskList">
-        <p id="startMessage">Список задач пуст</p>
-    </div>
-
-    <template id="template">
-        <div class="task">
-            <input id="checkbox" type="checkbox">
-            <p class="taskText">{{text}}</p>
-            <div class="dataBlock">
-                <p class="taskData">{{data}}</p>
-                <div id="deleteTask"></div>
+        <div class="name">TODO LIST</div>
+        <div class="panel">
+            <div class="inputButton">
+                <button id="showAllButtton"></button>
+                <button id="showNotCompletedButtton"></button>
             </div>
-
+            <form class="inputBlock">
+                <input type="text" id="taskInput" maxlength="120">
+                <input type="date" id="dateInput" required>
+                <button id="addTaskButtton"></button>
+            </form>
         </div>
-    </template>
-</div>
+
+        <div class="taskList">
+            <p id="startMessage">Список задач пуст</p>
+        </div>
+
+        <template id="template">
+            <div class="task">
+                <input id="checkbox" type="checkbox">
+                <p class="taskText">{{text}}</p>
+                <div class="dataBlock">
+                    <p class="taskData">{{data}}</p>
+                    <div id="deleteTask"></div>
+                </div>
+
+            </div>
+        </template>
+    </div>
     <script src="mustache.min.js"></script>
     <script src="main.js"></script>
 </body>
