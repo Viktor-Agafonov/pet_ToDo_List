@@ -67,13 +67,14 @@ let taskDatabaseManagement = {
 }
 
 function addNewTask() {
+    if (!taskInput.value) alert("Введите новую задачу");
     if (taskInput.value && dateInput.value) {
         if (!startMessage.hidden) startMessage.hidden = true;
         let newTask = new Task(taskInput.value, dateInput.value);
         taskDatabaseManagement.addTask(newTask);
         taskInput.value = "";
         createEndShowTasks(newTask);
-    } else alert("Введите новую задачу");
+    } 
 }
 
 function createEndShowTasks(obj) {
