@@ -83,11 +83,11 @@ function createEndShowTasks(obj) {
     if (!startMessage.hidden) startMessage.hidden = true;
 
     document.querySelectorAll(".taskData").forEach(task => {
-        if (task.innerHTML < minDate && !task.previousElementSibling) {
+        if (new Date(task.innerHTML) < new Date(minDate) && !task.previousElementSibling) {
             task.style.color = "red";
             task.insertAdjacentHTML("beforebegin", "<div class='alert'></div>");
         }
-        if (task.innerHTML > minDate && !task.previousElementSibling) task.insertAdjacentHTML("beforebegin", "<div class='edit'></div>");
+        if (new Date(task.innerHTML) > new Date(minDate) && !task.previousElementSibling) task.insertAdjacentHTML("beforebegin", "<div class='edit'></div>");
     });
 
     if (obj.isDone) {
