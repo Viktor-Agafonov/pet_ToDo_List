@@ -93,6 +93,8 @@ function createEndShowTasks(obj) {
         document.querySelectorAll(".task").forEach(task => {
             if (obj.text != task.children[1].textContent) return;
             task.classList.toggle("completed");
+            task.style.color = "#339933";
+            task.style.border = "2.5px solid rgb(7 185 100)";
             task.firstElementChild.click();
 
         });
@@ -110,11 +112,15 @@ function createEndShowTasks(obj) {
             obj.isDone = true;
             taskDatabaseManagement.savelocalStyleCompleted(obj);
             e.target.parentElement.classList.toggle("completed");
+            e.target.parentElement.style.color = "#339933";
+            e.target.parentElement.style.border = "2.5px solid rgb(7 185 100)";
 
         } else {
             obj.isDone = false;
             taskDatabaseManagement.savelocalStyleCompleted(obj);
             e.target.parentElement.classList.toggle("completed");
+            e.target.parentElement.style.color = "#19867c";
+            e.target.parentElement.style.border = "2.5px solid #00d1bd";
         }
     }));
 
